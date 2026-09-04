@@ -1,13 +1,25 @@
 import Link from "next/link";
 
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+  { href: "/research", label: "Research" },
+  { href: "/recommendations", label: "Recommendations" },
+  { href: "/contact", label: "Contact Me" },
+];
+
 export default function Nav() {
   return (
-    <nav className="flex gap-6 p-6 border-b">
-      <Link href="/">Home</Link>
-      <Link href="/blog">Blog</Link>
-      <Link href="/research">Research</Link>
-      <Link href="/cv">CV</Link>
-      <Link href="/contact">Contact</Link>
+    <nav className="flex justify-end gap-6 p-6 border-b">
+      {links.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className="text-gray-400 hover:text-white transition-colors"
+        >
+          {link.label}
+        </Link>
+      ))}
     </nav>
   );
 }
