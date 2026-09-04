@@ -15,7 +15,7 @@ export default function Nav() {
         <Link
           key={link.href}
           href={link.href}
-          className="text-gray-400 hover:text-white transition-colors"
+          className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
         >
           {link.label}
         </Link>
